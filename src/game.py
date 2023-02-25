@@ -34,7 +34,7 @@ while _run:
     display.fill((255, 255, 255, 255))
 
     _background.update()
-    _background.draw()
+    _background.draw(display)
 
     pygame.display.update()
     clock.tick(_fps)
