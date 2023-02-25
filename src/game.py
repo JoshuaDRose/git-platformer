@@ -24,7 +24,7 @@ display = pygame.display.set_mode(
 clock = pygame.time.Clock()
 _fps = 60.0
 _run = True
-_background = Background(_display.width, _display.height)
+_background = Background(window.width, window.height)
 
 while _run:
     for event in pygame.event.get():
