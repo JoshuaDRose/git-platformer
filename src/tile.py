@@ -16,13 +16,22 @@ from size import Size
 
 from pygame.math import Vector2 as Vector
 
-class Tile(object):
+class Tile(pygame.sprite.Sprite):
     """ Collideable, non-moveable tile object """
-    def __init__(self, spawn_position: Vector):
-        self.surface = pygame.Surface(100, 100)
-        self.surface.fill((0, 0, 0, 255))
+    def __init__(self, spawn_position: Vector, group):
+        super().__init__(group)
+        self.image = pygame.Surface(100, 100)
+        self.image.fill((0, 0, 0, 255))
         self.rect = pygame.Rect(100, 100, spawn_position.x, spawn_position.y)
+        self.alpha = 255
+        self.crumble = False
 
     def draw(self, surface):
         """ Draws tile to surface at rect position """
-        surface.blit(self.surface, self.rect)
+        if self.crumble:
+            self.alpha -= 50
+            if self.alpha <= 5:
+                self.kill()
+
+        self.image.set_alpha(self.alpha)
+        surface.blit(self.image, self.rect)
