@@ -21,8 +21,9 @@ class Tile(pygame.sprite.Sprite):
     def __init__(self, spawn_position: Vector, group):
         super().__init__(group)
         self.image = pygame.Surface(100, 100)
-        self.image.fill((0, 0, 0, 255))
+        self.image.fill((255, 255, 255, 255))
         self.rect = pygame.Rect(100, 100, spawn_position.x, spawn_position.y)
+        pygame.draw.rect(self.image, (0, 0, 0, 255), 4, 10)
         self.alpha = 255
         self.crumble = False
 
