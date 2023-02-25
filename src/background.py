@@ -11,11 +11,15 @@ class Background(pygame.sprite.Sprite):
         self.fadein = False
 
     def update(self):
+        """ Set animation state and opacity
+            returns: N/A
+        """
         if self.fadein:
             if self.alpha <= 5:
                 self.alpha = 0
+                self.image.set_alpha(self.alpha)
                 self.fadein = False
-                return;
+                return
             self.alpha -= 5
             self.image.set_alpha(self.alpha)
 
