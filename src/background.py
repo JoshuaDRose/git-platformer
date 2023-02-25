@@ -8,3 +8,16 @@ class Background(pygame.sprite.Sprite):
         self.rect = pygame.Rect(0, 0, width, height)
         self.alpha = 255
         self.color = (255, 255, 255, 255)
+        self.fadein = False
+
+    def update(self):
+        if self.fadein:
+            if self.alpha <= 5:
+                self.alpha = 0
+                self.fadein = False
+                return;
+            self.alpha -= 5
+            self.image.set_alpha(self.alpha)
+
+    def draw(self, surface):
+        surface.blit(self.image, self.rect)

@@ -32,8 +32,10 @@ while _run:
         if event.type == pygame.QUIT:
             _run = False
     if _fadein:
+        _background.update()
 
     display.fill((255, 255, 255, 255))
+    _background.draw()
     pygame.display.update()
     clock.tick(_fps)
 
