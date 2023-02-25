@@ -11,26 +11,9 @@ copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the conditions attatched in the license file.
 """
 
-import pygame
-from size import Size
+from dataclasses import dataclass
 
-pygame.display.init()
-_display = Size(width=800, height=800)
-display = pygame.display.set_mode(
-        (_display.width, _display.height),
-        pygame.SHOWN | pygame.DOUBLEBUF, 32)
-
-clock = pygame.time.Clock()
-_fps = 59.0
-_run = True
-
-while _run:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            _run = False
-
-    display.fill((255, 255, 255, 255))
-    pygame.display.update()
-    clock.tick(_fps)
-
-pygame.display.quit()
+@dataclass
+class Size(object):
+    width: int
+    height: int
