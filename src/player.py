@@ -19,7 +19,7 @@ class Player():
     spawn = Vector(400, 400)
     def __init__(self):
         name = "The Dude"
-        size = Size(width=50, height=50)
+        size = Size(50, 50)
 
     @staticmethod
     def render_name():
