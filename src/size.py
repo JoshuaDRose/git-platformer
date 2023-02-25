@@ -15,5 +15,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Size(object):
+    """ Size for entities and surface objects """
     width: int
     height: int
