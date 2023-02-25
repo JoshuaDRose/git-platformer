@@ -18,7 +18,7 @@ from size import Size
 class Player():
     spawn = Vector(400, 400)
     def __init__(self):
-        name = "The Dude"
+        self.name_str = "The Dude"
         size = Size(50, 50)
 
     @staticmethod
