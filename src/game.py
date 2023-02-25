@@ -10,3 +10,16 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the conditions attatched in the license file.
 """
+
+import pygame
+
+pygame.display.init()
+
+_run = True
+
+while _run:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            _run = False
+
+pygame.display.quit()
