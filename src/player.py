@@ -30,3 +30,8 @@ class Player():
         """ Draw player image to surface
             returns: N/A
         """
+
+    def update(self):
+        """ Update movement and collision
+            returns: N/A
+        """
