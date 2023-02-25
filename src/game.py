@@ -13,21 +13,25 @@ furnished to do so, subject to the conditions attatched in the license file.
 
 import pygame
 from size import Size
+from background import Background
 
 pygame.display.init()
-_display = Size(width=800, height=800)
+window = Size(width=800, height=800)
 display = pygame.display.set_mode(
-        (_display.width, _display.height),
+        (window.width, window.height),
         pygame.SHOWN | pygame.DOUBLEBUF, 32)
 
 clock = pygame.time.Clock()
 _fps = 59.0
 _run = True
+_fadein = True
+_background = Background(_display.width, _display.height)
 
 while _run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             _run = False
+    if _fadein:
 
     display.fill((255, 255, 255, 255))
     pygame.display.update()
