@@ -29,4 +29,8 @@ while _run:
         if event.type == pygame.QUIT:
             _run = False
 
+    display.fill((255, 255, 255, 255))
+    pygame.display.update()
+    clock.tick(_fps)
+
 pygame.display.quit()
