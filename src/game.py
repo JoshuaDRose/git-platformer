@@ -22,7 +22,7 @@ display = pygame.display.set_mode(
         pygame.SHOWN | pygame.DOUBLEBUF, 32)
 
 clock = pygame.time.Clock()
-_fps = 59.0
+_fps = 60.0
 _run = True
 _background = Background(_display.width, _display.height)
 
