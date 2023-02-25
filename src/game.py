@@ -24,18 +24,18 @@ display = pygame.display.set_mode(
 clock = pygame.time.Clock()
 _fps = 59.0
 _run = True
-_fadein = True
 _background = Background(_display.width, _display.height)
 
 while _run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             _run = False
-    if _fadein:
-        _background.update()
 
     display.fill((255, 255, 255, 255))
+
+    _background.update()
     _background.draw()
+
     pygame.display.update()
     clock.tick(_fps)
 
