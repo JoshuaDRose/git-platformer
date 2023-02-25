@@ -12,12 +12,14 @@ furnished to do so, subject to the conditions attatched in the license file.
 """
 
 import pygame
+from pygame.math import Vector2 as Vector
 from size import Size
 
 class Player():
-
-    name = "The Dude"
-    size = Size(width=50, height=50)
+    spawn = Vector(400, 400)
+    def __init__(self):
+        name = "The Dude"
+        size = Size(width=50, height=50)
 
     @staticmethod
     def render_name():
