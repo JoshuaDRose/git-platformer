@@ -15,7 +15,7 @@ import pygame
 from size import Size
 
 pygame.display.init()
-_display = Size(width=800, height=800)
+_display = Size(800, 800)
 display = pygame.display.set_mode(
         (_display.width, _display.height),
         pygame.SHOWN | pygame.DOUBLEBUF, 32)
